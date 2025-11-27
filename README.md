@@ -51,13 +51,13 @@
 
 三维瞬态导热方程：
 
-\[
+$$\[
 \rho c_p \frac{\partial T}{\partial t}
 = k \nabla^2 T
 = k \left( \frac{\partial^2 T}{\partial x^2}
 + \frac{\partial^2 T}{\partial y^2}
 + \frac{\partial^2 T}{\partial z^2} \right)
-\]
+\]$$
 
 PINN 在内部区域通过最小化 PDE 残差来学习物理规律，在边界上通过法向导数与对流换热条件构造边界残差。
 
