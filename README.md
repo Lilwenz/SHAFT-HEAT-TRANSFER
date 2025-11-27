@@ -176,8 +176,15 @@ Notebook 中包含完整的评估与可视化代码，典型输出包括：
 
 ## 7. 引用与致谢
 
-本项目基于 PINN 框架 **pinnstorch** 进行开发与实验，如在论文或报告中使用本项目代码或思路，请在合适位置对 **pinnstorch** 进行引用和致谢。例如（根据你实际使用的版本和论文格式自行调整）：
+本项目基于 PINN 框架 **pinnstorch** 进行开发与实验，如在论文或报告中使用本项目代码或思路，请在合适位置对 **pinnstorch** 进行引用和致谢。例如：
 
-> 使用了物理信息神经网络库 *pinnstorch*（https://github.com/XXXXXX/pinns-torch）进行三维阶梯轴瞬态热传导问题的建模与训练。
+> @inproceedings{
+bafghi2023pinnstorch,
+title={{PINN}s-Torch: Enhancing Speed and Usability of Physics-Informed Neural Networks with PyTorch},
+author={Reza Akbarian Bafghi and Maziar Raissi},
+booktitle={The Symbiosis of Deep Learning and Differential Equations III},
+year={2023},
+url={https://openreview.net/forum?id=nl1ZzdHpab}
+}。
 
 同时感谢 **pinnstorch** 作者及相关开源社区对 PINN 方法的实现与推广，为本工作的实现提供了重要基础。
