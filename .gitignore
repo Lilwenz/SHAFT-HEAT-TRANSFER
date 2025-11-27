@@ -1,0 +1,21 @@
+# Ignore large simulation CSV exports
+job4_temperatures__ALL-N.csv
+job4_temperatures__SENSORS-N.csv
+job4_temperatures.csv
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# Lightning / training logs (can be regenerated)
+lightning_logs/
+
+# OS / editor junk
+.DS_Store
+Thumbs.db
+.vscode/

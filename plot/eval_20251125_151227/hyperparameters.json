@@ -1,0 +1,33 @@
+{
+    "physics": {
+        "rho": 7.9e-09,
+        "cp": 450000000.0,
+        "k": 48.0,
+        "q_n": 20.0,
+        "h": 0.0085,
+        "T_inf": 20.0
+    },
+    "network": {
+        "layers": [
+            4,
+            128,
+            128,
+            128,
+            128,
+            1
+        ]
+    },
+    "training": {
+        "N_SENSORS": 3216,
+        "N_PDE": 20000,
+        "N_BC_ENDS": 8000,
+        "N_BC_STEPS": 20000,
+        "N_BC_SIDES": 8000,
+        "MAX_EPOCHS": 8000,
+        "weights": {
+            "pde_weight": 5,
+            "bc_scale_general": 0.3,
+            "bc_scale_steps": 1.0
+        }
+    }
+}

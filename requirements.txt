@@ -1,0 +1,10 @@
+torch
+lightning
+pinnstorch
+numpy
+pandas
+matplotlib
+seaborn
+plotly
+ipywidgets
+nbformat>=4.2.0
