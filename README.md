@@ -31,40 +31,34 @@
   - 段 1：直径 50 mm，长度 150 mm  
   - 段 2：直径 100 mm，长度 700 mm  
   - 段 3：直径 50 mm，长度 150 mm  
-  - 轴向坐标区间约为 \(z \in [0, 1000]\) mm。
+  - 轴向坐标区间约为 z ∈ [0, 1000] mm。
 - 材料：45 号钢（Steel 45），采用统一单位体系：
   - 长度：mm
   - 时间：s
   - 温度：℃  
-  - 密度：\(\rho = 7.9\times 10^{-9}\) tonne/mm³  
-  - 比热容：\(c_p = 4.5\times 10^{8}\) mJ/(tonne·℃)  
-  - 导热系数：\(k = 48\) mW/(mm·℃)
+  - 密度：rho = 7.9 × 10⁻⁹ tonne/mm³  
+  - 比热容：cp = 4.5 × 10⁸ mJ/(tonne·℃)  
+  - 导热系数：k = 48 mW/(mm·℃)
 - 边界条件：
   - **端面 (Ends, z = 0 / 1000)**：给定热流 \(q_n\) 与对流换热系数 \(h\)，满足
-    \[ k\frac{\partial T}{\partial n} = q_n - h(T - T_\infty) \]
+    `k * dT/dn = q_n - h * (T - T_inf)`
   - **侧面 (Sides)**：圆柱侧面 \(r=25\) mm 或 \(r=50\) mm，仅对流散热
-    \[ k\frac{\partial T}{\partial n} = -h(T - T_\infty) \]
+    `k * dT/dn = -h * (T - T_inf)`
   - **台阶面 (Steps, z=150 / 850)**：环形台阶面，仅对流散热
-    \[ k\frac{\partial T}{\partial n} = -h(T - T_\infty) \]
+    `k * dT/dn = -h * (T - T_inf)`
 
 ### 2.2 控制方程（PDE）
 
-三维瞬态导热方程：
+三维瞬态导热方程（文字形式）：
 
-$$\[
-\rho c_p \frac{\partial T}{\partial t}
-= k \nabla^2 T
-= k \left( \frac{\partial^2 T}{\partial x^2}
-+ \frac{\partial^2 T}{\partial y^2}
-+ \frac{\partial^2 T}{\partial z^2} \right)
-\]$$
+`rho * cp * dT/dt = k * (d2T/dx2 + d2T/dy2 + d2T/dz2)`
 
 PINN 在内部区域通过最小化 PDE 残差来学习物理规律，在边界上通过法向导数与对流换热条件构造边界残差。
 
 ### 2.3 数据文件说明
 
 - `job4_temperatures__SENSORS-N.csv`  
-  - 每一行包含：时间步索引、时间、节点集合名、实例名、节点编号、坐标 \((x,y,z)\)、温度 `NT11`。  
+  - 每一行包含：时间步索引、时间、节点集合名、实例名、节点编号、坐标 (x, y, z)、温度 `NT11`。  
   - 仅覆盖少数传感器节点，用作“观测数据”。
 - `job4_temperatures__ALL-N.csv`  
   - 包含全场所有节点，覆盖全部时间步。  
